@@ -15,7 +15,7 @@ const userrgister=async (req:Request,res:Response)=>{
         if(already){
             return res.status(200).json({message:"user already exists"})
         }
-        const hashed=await bcrypt.hash(password,10)
+        const hashed=await bcrypt.hash(password,14)
         const newuser=new User({
             name,
             email,
